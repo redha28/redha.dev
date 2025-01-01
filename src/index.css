@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+.scrollbar-custom {
+  scrollbar-width: thin; /* Scrollbar width for Firefox */
+  scrollbar-color: #ffffff #1f2937; /* Thumb (white), Track (dark gray) */
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ffffff, #f3f4f6); /* Gradient thumb */
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid #1f2937; /* Border to match track */
+  transition: background 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #e5e7eb,
+    #d1d5db
+  ); /* Lighter gradient on hover */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #1f2937; /* Dark track color */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Awal: Item tersembunyi */
+.experience-item {
+  opacity: 0; /* Tidak terlihat */
+  transform: translateY(10px); /* Geser sedikit ke bawah */
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Animasi smooth */
+}
+
+/* Ketika elemen terlihat */
+.experience-item.visible {
+  opacity: 1; /* Terlihat */
+  transform: translateY(0); /* Kembali ke posisi semula */
+}
